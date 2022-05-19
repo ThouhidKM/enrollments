@@ -77,4 +77,15 @@ public class Subject {
     public boolean removeRoom(Room room){
         return this.rooms.remove(room);
     }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", subject_name='" + subject_name + '\'' +
+                ", subject_code='" + subject_code + '\'' +
+                ", credits=" + credits +
+                ", rooms=" + rooms +
+                '}';
+    }
 }

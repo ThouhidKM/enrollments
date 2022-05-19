@@ -17,25 +17,43 @@ public class Room {
     @ManyToMany()
     @JoinTable(
             name="enrollments",
-            joinColumns = {@JoinColumn(name="room_id")},
-            inverseJoinColumns = {@JoinColumn(name="subject_id")}
+            joinColumns = {@JoinColumn(name="room_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name="subject_id",nullable = false)}
     )
     private List<Subject> subjects;
 
-
-
-
-
-
     protected Room(){}
-    public Room(List<Student> students) {
-        this.students = new ArrayList<>();
+    public Room(List<Student> students, List<Subject> subjects) {
+        this.students = students;
+        this.subjects = subjects;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public List<Student> getStudents() {
+        return students;
+    }
 
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
 
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
+    }
 
-
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", students=" + students +
+                ", subjects=" + subjects +
+                '}';
+    }
 }
