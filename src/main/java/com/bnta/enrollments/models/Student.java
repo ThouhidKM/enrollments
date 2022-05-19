@@ -28,6 +28,41 @@ public class Student {
     private Room room;
 
 
+    protected Student(){}
+    public Student(String name, LocalDate dob, Room room) {
+        this.name = name;
+        this.dob = dob;
+        this.room = room;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
     public Integer getAge() {
 
         return Period.between(this.dob, LocalDate.now()).getYears();

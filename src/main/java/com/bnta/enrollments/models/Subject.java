@@ -20,7 +20,7 @@ public class Subject {
     @Column(name="Credits")
     private Long credits;
 
-    @ManyToMany(mappedBy= "")
+    @ManyToMany(mappedBy= "subjects")
     private List<Room> rooms;
 
     protected Subject(){}
